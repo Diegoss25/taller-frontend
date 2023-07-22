@@ -1,0 +1,449 @@
+:root {
+	--rojo: #f23030;
+	--fondo: #141414;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background: var(--fondo);
+	font-family: 'Open Sans', sans-serif;
+	
+}
+.contenedor {
+	width: 90%;
+	margin: auto;
+}
+header {
+	padding: 15px 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: var(--fondo);
+	z-index: 999;
+	
+}
+header.header-scroll {
+	background-color: transparent;
+}
+header .contenedor {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+}
+header .logotipo {
+	font-family: 'Bebas Neue', cursive;
+	font-weight: normal;
+	color: var(--rojo);
+	font-size: 40px;
+}
+
+header nav a {
+	color: #AAA;
+	text-decoration: none;
+	margin-right: 20px;
+	font-size:130%
+	
+}
+
+header nav a:hover,
+header nav a.activo {
+	color: #FFF;
+}
+
+.Estrenos {
+	padding-top: 0px; 
+	
+}
+.Peliculas{
+	
+	padding-top: 25px; 
+	
+}
+.pelicula-principal{
+	margin-top: 80px;
+	
+	
+}
+
+/* ---- ----- ----- Pelicula Principal ----- ----- ----- */
+.pelicula-principal {
+	font-size: 16px;
+	min-height: 40.62em;
+	color: #fff;
+	background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0,0,0,.50) 100%), url(../img/Spiderman1.jpg);
+	background-position: center center;
+	background-size: cover;
+	margin-bottom: 3.12em;
+	display: flex;
+	align-items: end;
+}
+
+.pelicula-principal .contenedor {
+	margin: 0 auto;
+	margin-bottom: 6.25em;
+}
+
+.pelicula-principal .titulo {
+	font-weight: 600;
+	font-size: 3.12em;
+	margin-bottom: 0.4em;
+}
+
+.pelicula-principal .descripcion {
+	font-weight: normal;
+	font-size: 1em;
+	line-height: 1.75em;
+	max-width: 50%;
+	margin-bottom: 1.25em;
+}
+
+.pelicula-principal .boton {
+	background: rgba(0,0,0, 0.5);
+	border: none;
+	border-radius: 0.31em;
+	padding: 0.93em 1.87em;
+	color: #fff;
+	margin-right: 1.25em;
+	cursor: pointer;
+	transition: .3s ease all;
+	font-size: 1.12em;
+}
+
+.pelicula-principal .boton:hover {
+	background: #fff;
+	color:black;
+}
+
+.pelicula-principal .boton i {
+	margin-right: 1.25em;
+	color:#AAA;
+	
+
+}
+
+.video-container {
+    display: none; /* Ocultar el contenedor del video por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.video-container .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.video-container video {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+    outline: none;
+    transition: all 0.3s;
+}
+
+.video-container.show {
+    display: flex; /* Mostrar el contenedor del video cuando se le dé clic al botón */
+}
+
+.video-container.show video {
+    transform: scale(1);
+}
+
+/* ---- ----- ----- Media Queries ----- ----- ----- */
+@media screen and (max-width: 800px) {
+	header .logotipo {
+		margin-bottom: 10px;
+		font-size: 30px;
+	}
+
+	header .contenedor {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.pelicula-principal {
+		font-size: 14px;
+	}
+
+	.pelicula-principal .descripcion {
+		max-width: 100%;
+	}
+}
+/* color de los titulos */
+.Estrenos .separador {
+	color: #f23030;
+	text-align: center;
+	padding-top: 15px;
+	font-size: 24px; /* Tamaño de fuente más grande (puedes ajustarlo según tus preferencias) */
+	font-weight: bold; /* Hace el texto más llamativo y audaz */
+	font-family: "Arial", sans-serif; /* Cambia la fuente a Arial u otra de tu elección */
+	text-transform: uppercase; /* Cambia el texto a mayúsculas para más impacto */
+	letter-spacing: 2px; /* Agrega un espaciado entre letras para un aspecto más elegante */
+  }
+  
+.Peliculas .separador{
+	color:aqua;
+	padding-top: 15px;
+}
+.Mas_Recientes .separador{
+	color:aqua;
+	padding-top: 15px;
+}
+/* listado de peliculas */
+.cont_servi{
+display: grid;
+grid-template-columns: repeat(
+	auto-fit,
+	minmax(
+		150px, 
+		1fr)
+);
+}
+.uni_serv{
+    width: 92%;
+    height: 80%;
+    margin: 12px;
+}
+.uni_serv .box_icon{
+	height: 180px;
+    width: 180px;
+    background: #141414;
+    border-radius: 0px;
+    margin: auto;
+    background-size: cover;
+}
+.box_icon img{
+    height: 55%;
+    vertical-align: middle;
+    margin: 15% auto; 
+}
+.uni_serv .sub{
+    font-size: 22px;
+	color: #FFF;
+}
+.uni_serv p{
+    font-size: 22px;
+    margin: 25px 10px 10px 10px;
+    color: rgba(255, 255, 255, 0.315);
+}
+.uni_serv a{
+    color: #E600FF;
+    position: relative;
+    bottom: 0px;
+}
+
+.contenedorSlide{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* estilo de botones de reproduccion */
+.pelicula-principal .boton, .Mas_Recientes .boton {
+    background: var(--rojo);
+    border-radius: 50px;
+    padding: 15px 30px;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s ease all;
+    font-size: 1.2em;
+}
+/* footer */
+
+footer {
+    background-color: var(--fondo);
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    width: 100%;
+}
+
+footer .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+footer .redes-sociales a {
+    color: #fff;
+    font-size: 30px;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+footer .redes-sociales a:hover {
+    color: var(--rojo);
+}
+
+
+/* seccion mi lista */
+.Genero_favorito {
+	display: flex;
+}
+  
+.Genero_favorito .video {
+	flex: 1; /* La columna del video ocupará el 50% del ancho del contenedor */
+	padding: 5px; /* Ajusta este valor para centrar el contenido */
+	background-color: #f0f0f0; /* Puedes cambiar el color de fondo según tu preferencia */
+	width: 100%;
+	height: 500px;
+	display: flex; /* Activa el modelo de caja flexible */
+	align-items: center; /* Centra verticalmente el contenido */
+	justify-content: center; /* Centra horizontalmente el contenido */
+	flex-direction: column;
+  }
+  
+.Genero_favorito .video video {
+	width: 100%; /* Ajustar el video al 100% del ancho del contenedor */
+	height: 100%; /* Ajustar la altura automáticamente para mantener la proporción */
+	object-fit: cover; /* Hace que el video se ajuste proporcionalmente sin perder contenido */
+  }
+  
+.Genero_favorito .texto {
+	flex: 1; /* La columna de texto ocupará el 50% del ancho del contenedor */
+	padding: 50px; /* Ajusta este valor para centrar el contenido */
+	max-width: 100%;
+	max-width: 800px;
+	background-color: #e0e0e0; /* Puedes cambiar el color de fondo según tu preferencia */
+	width: 100%;
+	height: 500px;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
+}
+  
+  /* Opcional: para que el diseño sea más amigable en dispositivos móviles */
+@media screen and (max-width: 768px) {
+	.Genero_favorito {
+	  flex-direction: column; /* Cambiar el diseño a una columna en dispositivos móviles */
+	}
+  }
+  
+
+  .Mas_Recientes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+    background-color: #141414;
+    color: #fff;
+}
+
+.Mas_Recientes .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1000px;
+}
+
+.Mas_Recientes .reproducir {
+	flex: 1;
+	text-align: center;
+	padding-right: 50px;
+	position: relative; 
+	background-image: url('img/Estrenos.jpg'); 
+	background-position: center;
+  }
+
+.Mas_Recientes .texto {
+    flex: 1;
+    max-width: 400px;
+}
+
+.Mas_Recientes .reproducir .boton {
+    background: var(--rojo);
+    border-radius: 50px;
+    padding: 15px 30px;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s ease all;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.Mas_Recientes .reproducir .boton:hover {
+    background: #fff;
+    color: var(--rojo);
+}
+
+.Mas_Recientes .reproducir::before {
+	content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('img/1.png'); 
+    background-size: cover;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+
+
+
+
+
+
+
+/* ... Tu código CSS anterior ... */
+
+.video-container {
+	display: none; /* Ocultar el contenedor del video por defecto */
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .video-container .close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 24px;
+	color: #fff;
+	cursor: pointer;
+  }
+  
+  .video-container video {
+	width: 90%;
+	max-width: 800px;
+	margin: auto;
+	box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+	outline: none;
+	transition: all 0.3s;
+  }
+  
+  .video-container.show {
+	display: flex; /* Mostrar el contenedor del video cuando se le dé clic al botón */
+  }
+  
+  .video-container.show video {
+	transform: scale(1);
+  }
+  
+  /* ... Tu código CSS posterior ... */
+  
